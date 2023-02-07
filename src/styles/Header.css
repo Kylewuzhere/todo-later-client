@@ -1,0 +1,7 @@
+.header-bg {
+  background-color: #e6ab09;
+  height: 15%;
+  min-height: fit-content;
+  padding: 3em;
+  border-bottom: 3px solid #898989;
+}

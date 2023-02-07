@@ -13,14 +13,15 @@ const CreateTodo = () => {
   return (
     <div>
       <form onSubmit={onSubmit}>
-        <div>
+        <div className="form-group">
           <label htmlFor="title">Title</label>
-          <input id="title" type="text" />
+          <input className="form-control" id="title" type="text" />
         </div>
-        <div>
+        <div className="form-group">
           <label htmlFor="description">Description</label>
-          <input type="text" />
+          <input className="form-control" id="description" type="text" />
         </div>
+        <button className="btn btn-outline-success">Submit</button>
       </form>
     </div>
   );

@@ -1,12 +1,12 @@
 import React from "react";
 import CreateTodo from "../components/CreateTodo";
-import Header from "../components/Header";
+import TodoList from "../components/TodoList";
 
 const Homepage = () => {
   return (
-    <div>
-      <Header />
+    <div className="container">
       <CreateTodo />
+      <TodoList />
     </div>
   );
 };
