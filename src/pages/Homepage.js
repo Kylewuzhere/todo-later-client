@@ -5,6 +5,16 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 const Homepage = () => {
   const { isAuthenticated } = useAuth0();
+
+  if (!isAuthenticated) {
+    return (
+      <div className="container">
+        <h2 className="my-3">Welcome to Todo App</h2>
+        <p>Please login to create and view your todos.</p>
+      </div>
+    );
+  }
+
   return (
     <div className="container">
       <CreateTodo />
