@@ -17,8 +17,6 @@ const CreateTodo = () => {
     });
   };
 
-  useEffect(() => console.log(todo));
-
   const onSubmit = (e) => {
     e.preventDefault();
 
@@ -39,25 +37,25 @@ const CreateTodo = () => {
   return (
     <div>
       <form onSubmit={onSubmit}>
-        <div className="form-group">
+        <div className="form-group my-2">
           <label htmlFor="title">Title</label>
           <input
-            className="form-control"
+            className="form-control my-2"
             id="title"
             type="text"
             onChange={handleChange}
           />
         </div>
-        <div className="form-group">
+        <div className="form-group my-2">
           <label htmlFor="description">Description</label>
           <input
-            className="form-control"
+            className="form-control my-2"
             id="description"
             type="text"
             onChange={handleChange}
           />
         </div>
-        <button className="btn btn-outline-success">Submit</button>
+        <button className="btn btn-outline-success my-2">Submit</button>
       </form>
     </div>
   );
