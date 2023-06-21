@@ -5,11 +5,8 @@ import LogoutButton from "./LogoutButton";
 import "../styles/Header.css";
 
 const Header = () => {
-  const { user, isAuthenticated } = useAuth0();
+  const { isAuthenticated } = useAuth0();
 
-  if (isAuthenticated) {
-    console.log(user, isAuthenticated);
-  }
   return (
     <header className="header-bg">
       <div className="container d-flex">
