@@ -6,7 +6,11 @@ import { useAuth0 } from "@auth0/auth0-react";
 const TodoList = () => {
   const [todos, setTodos] = useState([]);
   const [error, setError] = useState(false);
+  const [updated, setUpdated] = useState(false);
+
   const { getAccessTokenSilently } = useAuth0();
+
+  console.log(todos);
 
   useEffect(() => {
     const getTodos = async () => {
@@ -22,7 +26,8 @@ const TodoList = () => {
       }
     };
     getTodos();
-  }, [getAccessTokenSilently]);
+    setUpdated(false);
+  }, [getAccessTokenSilently, updated]);
 
   return (
     <div>
@@ -32,12 +37,15 @@ const TodoList = () => {
         </div>
       )}
       {todos &&
-        todos.map((todo) => (
+        todos.map((todo, index) => (
           <Todo
-            key={todo.todo_id}
+            key={index}
+            id={todo.todo_id}
+            user={todo.user_id}
             title={todo.title}
             description={todo.description}
             completed={todo.completed}
+            setUpdated={setUpdated}
           />
         ))}
     </div>
