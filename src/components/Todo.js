@@ -32,6 +32,12 @@ const Todo = ({ id, title, description, completed, setUpdated }) => {
   };
 
   const handleChange = (e) => {
+    if (e.target.value === "") {
+      setTodo({
+        ...todo,
+        [e.target.id]: e.target.placeholder,
+      });
+    }
     setTodo({
       ...todo,
       [e.target.id]: e.target.value,
@@ -53,7 +59,7 @@ const Todo = ({ id, title, description, completed, setUpdated }) => {
   };
 
   return (
-    <div className="card">
+    <div className="card my-2">
       <div className="card-body">
         {editItem ? (
           <form onSubmit={onSubmit}>
@@ -65,7 +71,6 @@ const Todo = ({ id, title, description, completed, setUpdated }) => {
                 type="text"
                 placeholder={title}
                 onChange={handleChange}
-                defaultValue={title}
               />
             </div>
             <div className="form-group my-2">
@@ -76,7 +81,6 @@ const Todo = ({ id, title, description, completed, setUpdated }) => {
                 type="text"
                 placeholder={description}
                 onChange={handleChange}
-                defaultValue={description}
               />
             </div>
             <div className="form-group my-2">
@@ -91,7 +95,25 @@ const Todo = ({ id, title, description, completed, setUpdated }) => {
                 <option value="true">Completed</option>
               </select>
             </div>
-            <button className="btn btn-outline-success my-2">Submit</button>
+            <button className="btn btn-outline-success my-2 me-3">
+              Submit
+            </button>
+            <button
+              className="btn btn-primary me-3"
+              type="button"
+              value="Input"
+              onClick={handleEdit}
+            >
+              <CiEdit />
+            </button>
+            <button
+              className="btn btn-danger me-3"
+              type="button"
+              value="Input"
+              onClick={handleDelete}
+            >
+              <CiTrash />
+            </button>
           </form>
         ) : (
           <div>
@@ -100,25 +122,24 @@ const Todo = ({ id, title, description, completed, setUpdated }) => {
             <p className="card-text">
               {completed ? "Completed" : "Not Completed"}
             </p>
+            <button
+              className="btn btn-primary me-3"
+              type="button"
+              value="Input"
+              onClick={handleEdit}
+            >
+              <CiEdit />
+            </button>
+            <button
+              className="btn btn-danger me-3"
+              type="button"
+              value="Input"
+              onClick={handleDelete}
+            >
+              <CiTrash />
+            </button>
           </div>
         )}
-
-        <button
-          className="btn btn-primary"
-          type="button"
-          value="Input"
-          onClick={handleEdit}
-        >
-          <CiEdit />
-        </button>
-        <button
-          className="btn btn-danger"
-          type="button"
-          value="Input"
-          onClick={handleDelete}
-        >
-          <CiTrash />
-        </button>
       </div>
     </div>
   );
