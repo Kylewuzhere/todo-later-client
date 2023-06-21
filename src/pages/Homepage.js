@@ -4,7 +4,7 @@ import TodoList from "../components/TodoList";
 import { useAuth0 } from "@auth0/auth0-react";
 
 const Homepage = () => {
-  const { isAuthenticated } = useAuth0();
+  const { user, isAuthenticated } = useAuth0();
 
   if (!isAuthenticated) {
     return (
@@ -17,6 +17,7 @@ const Homepage = () => {
 
   return (
     <div className="container">
+      <h2 className="my-3">Welcome {user.name}</h2>
       <CreateTodo />
       {isAuthenticated && <TodoList />}
     </div>
