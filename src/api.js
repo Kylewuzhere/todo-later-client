@@ -17,7 +17,6 @@ const api = {
       body: JSON.stringify(body),
     }),
   updateTodos: async (id, body, accessToken) => {
-    console.log(body);
     await fetch(`${process.env.REACT_APP_API_URL}/todos/${id}`, {
       method: "PUT",
       headers: {
