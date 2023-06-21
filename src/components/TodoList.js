@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Todo from "./Todo";
-import api from "../api";
 import { useAuth0 } from "@auth0/auth0-react";
 
 const TodoList = () => {
@@ -10,19 +9,24 @@ const TodoList = () => {
 
   const { getAccessTokenSilently } = useAuth0();
 
-  console.log(todos);
-
   useEffect(() => {
     const getTodos = async () => {
       const accessToken = await getAccessTokenSilently();
+      try {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/todos`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${accessToken}`,
+          },
+        });
 
-      const response = await api.getTodos(accessToken);
-
-      if (response.ok) {
         const data = await response.json();
         setTodos(data);
-      } else {
+      } catch (e) {
+        console.log(e.message);
         setError(true);
+        throw e;
       }
     };
     getTodos();
