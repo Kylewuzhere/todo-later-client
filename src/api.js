@@ -17,6 +17,7 @@ const api = {
       body: JSON.stringify(body),
     }),
   updateTodos: async (id, body, accessToken) => {
+    console.log(body);
     await fetch(`${process.env.REACT_APP_API_URL}/todos/${id}`, {
       method: "PUT",
       headers: {
@@ -26,14 +27,13 @@ const api = {
       body: JSON.stringify(body),
     });
   },
-  deleteTodos: async (id, body, accessToken) => {
+  deleteTodos: async (id, accessToken) => {
     await fetch(`${process.env.REACT_APP_API_URL}/todos/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${accessToken}`,
       },
-      body: JSON.stringify(body),
     });
   },
 };
