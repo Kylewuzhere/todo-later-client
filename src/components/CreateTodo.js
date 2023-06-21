@@ -17,7 +17,7 @@ const CreateTodo = () => {
     });
   };
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
 
     const create = async () => {
@@ -29,7 +29,8 @@ const CreateTodo = () => {
       }
     };
 
-    create();
+    await create();
+    window.location.reload();
 
     return;
   };
