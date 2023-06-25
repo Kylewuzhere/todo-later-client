@@ -1,6 +1,6 @@
 # todo-later-client
 
-Hey there! Welcome to Todo-Later Client, my personal React project. This application is designed to help you manage your todos effortlessly. As a client-side app, it communicates with the server-side app, [Todo-Later-Server](https://github.com/Kylewuzhere/todo-later-server), via API. Before we dive in, I'd like to mention that user authentication is a priority, so I've integrated Auth0 as the authentication provider. You'll need to log in before you can start using the app.
+Welcome to Todo-Later Client, my personal React project. This application is designed to help you manage your todos effortlessly. As a client-side app, it communicates with the server-side app, [Todo-Later-Server](https://github.com/Kylewuzhere/todo-later-server), via API. Before we dive in, I'd like to mention that user authentication is a priority, so I've integrated Auth0 as the authentication provider. You'll need to log in before you can start using the app.
 
 ## Technologies Used
 
