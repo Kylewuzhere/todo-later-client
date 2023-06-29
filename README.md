@@ -26,7 +26,7 @@ Todo-Later Client uses Auth0 for user authentication. Users need to sign up and 
 
 ## Deployment
 
-You can access Todo-Later Client right away using the following Netlify deployment URL: https://roaring-kangaroo-61ec7d.netlify.app/.
+You can access Todo-Later Client right away using the following Netlify deployment URL: https://todolater-kylewuzhere.netlify.app/.
 
 ## Getting Started
 
