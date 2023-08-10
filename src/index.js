@@ -1,5 +1,6 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 import Auth0ProviderWithHistory from "./components/Auth0ProviderWithHistory";
 import "./index.css";
 import App from "./App";
@@ -8,9 +9,11 @@ import reportWebVitals from "./reportWebVitals";
 const root = createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Auth0ProviderWithHistory>
-      <App />
-    </Auth0ProviderWithHistory>
+    <BrowserRouter>
+      <Auth0ProviderWithHistory>
+        <App />
+      </Auth0ProviderWithHistory>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
