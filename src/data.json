@@ -2,22 +2,22 @@
   {
     "user_id": "oRvTDDOcpyOshMU2Av1CdY7tkQQAJxDH@clients",
     "todo_id": 1,
-    "title": "title 1",
-    "description": "description 1",
+    "title": "Read The Great Gatsby",
+    "description": "They made a book about Leonardo DiCaprio's movie The Great Gatsby",
     "completed": false
   },
   {
     "user_id": "oRvTDDOcpyOshMU2Av1CdY7tkQQAJxDH@clients",
     "todo_id": 2,
-    "title": "title 2",
-    "description": "description 2",
+    "title": "BTW you can't edit anything",
+    "description": "it's true since this is just a demo",
     "completed": false
   },
   {
     "user_id": "oRvTDDOcpyOshMU2Av1CdY7tkQQAJxDH@clients",
     "todo_id": 3,
-    "title": "title 3",
-    "description": "description 3",
+    "title": "Recite the ABCs backwards",
+    "description": "Just do it",
     "completed": true
   }
 ]
