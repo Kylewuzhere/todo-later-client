@@ -14,7 +14,16 @@ const Header = () => {
           <h1 className="app-name mx-3">Todo Later</h1>
         </div>
         <nav className="navbar">
-          <button className="btn bg-light mx-3">Home</button>
+          <button className="btn bg-light mx-3">
+            <a className="nav-link" href="/">
+              Home
+            </a>
+          </button>
+          <button className="btn bg-light mx-3">
+            <a className="nav-link" href="/demo">
+              Demo
+            </a>
+          </button>
           {isAuthenticated ? (
             <>
               <LogoutButton className="mx-3" />
